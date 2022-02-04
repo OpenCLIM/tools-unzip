@@ -21,7 +21,7 @@ spec:
     dataslots:
       - name: Input archive
         description: A .zip archive file to be un-zipped
-        path: inputs/clip
+        path: inputs
         required: true
         default:
           - 9bec8fe0-f282-4202-bf6c-1cb195716243
