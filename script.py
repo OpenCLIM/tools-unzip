@@ -22,7 +22,7 @@ formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 fh.setFormatter(formatter)
 logger.addHandler(fh)
 
-archive_to_unzip = os.getenv('ARCHIVE_PATH')
+archive_to_unzip = os.getenv('ARCHIVE_FILE')
 
 logger.info('Running unzip process')
 
