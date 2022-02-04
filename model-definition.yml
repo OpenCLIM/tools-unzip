@@ -1,0 +1,36 @@
+kind: Model
+api_version: v1beta1
+metadata:
+  display_name: ToolSet:Unzip
+  name: toolset-extract
+  summary: A utility tool for extracting data from a zip archive
+  publisher: Newcastle University
+  source_code: https://github.com/OpenCLIM/tools-unzip
+  description: >
+    Unzips files and folders from a .zip archive
+spec:
+  inputs:
+    parameters:
+      - name: ARCHIVE_FILE
+        title: Archive file
+        description: The name of the archive file held within the dataslot
+        type: string
+        required: true
+        default: 'None'
+
+    dataslots:
+      - name: Input archive
+        description: A .zip archive file to be un-zipped
+        path: inputs/clip
+        required: true
+        default:
+          - 9bec8fe0-f282-4202-bf6c-1cb195716243
+
+  outputs:
+    datasets:
+      - name: outputs/
+        type: folder
+        description: path to processed data outputs
+      - name: outputs/*.log
+        type: Text
+        description: log file
