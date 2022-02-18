@@ -10,18 +10,10 @@ metadata:
     Unzips files and folders from a .zip archive
 spec:
   inputs:
-    parameters:
-      - name: ARCHIVE_FILE
-        title: Archive file
-        description: The name of the archive file held within the dataslot
-        type: string
-        required: true
-        default: 'None'
-
     dataslots:
       - name: Input archive
-        description: A .zip archive file to be un-zipped
-        path: inputs
+        description: A archive file to be un-zipped. Aceepts .zip currently
+        path: inputs/
         required: true
         default:
           - 9bec8fe0-f282-4202-bf6c-1cb195716243

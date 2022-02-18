@@ -4,8 +4,8 @@ RUN mkdir /src
 
 WORKDIR /src
 
-COPY script.py .
-
 RUN apk update && apk add python3 && apk add unzip
+
+COPY script.py .
 
 CMD python3 script.py

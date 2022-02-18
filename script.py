@@ -1,7 +1,7 @@
 import subprocess
 from pathlib import Path
 import os
-from os.path import join
+from os.path import join, isfile
 import logging
 
 # setup paths to data
@@ -22,13 +22,17 @@ formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 fh.setFormatter(formatter)
 logger.addHandler(fh)
 
-archive_to_unzip = os.getenv('ARCHIVE_FILE')
+# get list of files to extract
+files = [f for f in os.listdir(inputs) if isfile(join(inputs, f))]
+logger.info('Archives found: %s' %files)
 
-logger.info('Running unzip process')
+logger.info('Running extract process')
+for archive in files:
+    if archive.split('.')[-1:][0] == 'zip':
+        logger.info('Running an unzip')
+        subprocess.call(['unzip',
+                         join('/data/inputs', archive),    # source
+                         '-d', outputs,         # destination directory
+                         ])
 
-subprocess.call(['unzip',
-                 join('/data/inputs', archive_to_unzip),    # source
-                 '-d', outputs,         # destination directory
-                 ])
-
-logger.info('Zip completed')
+logger.info('Extract completed')
