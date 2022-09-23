@@ -23,7 +23,7 @@ fh.setFormatter(formatter)
 logger.addHandler(fh)
 
 # get list of files to extract
-files = [f for f in os.listdir(inputs) if isfile(join(inputs, f))]
+files = [f for f in os.listdir(data) if isfile(join(data, f))]
 logger.info('Archives found: %s' %files)
 
 logger.info('Running extract process')
