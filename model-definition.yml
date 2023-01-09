@@ -12,7 +12,7 @@ spec:
   inputs:
     dataslots:
       - name: Input archive
-        description: A archive file to be un-zipped. Aceepts .zip currently
+        description: A archive file to be un-zipped. Accepts .zip currently
         path: inputs/
         required: true
         default:
