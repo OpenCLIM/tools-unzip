@@ -15,8 +15,6 @@ spec:
         description: A archive file to be un-zipped. Accepts .zip currently
         path: inputs/
         required: false
-        default:
-          - 9bec8fe0-f282-4202-bf6c-1cb195716243
 
   outputs:
     datasets:
